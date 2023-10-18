@@ -39,7 +39,7 @@ typedef struct instruction_s
 
 /* Function prototypes for opcodes */
 
-extern char *value;
+
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
@@ -51,17 +51,21 @@ void nop(stack_t **stack, unsigned int line_number);
 
 /* Other utility functions */
 
-void free_stack(stack_t *stack);
-void push_error(unsigned int line_number);
+
+
 void pall_error(void);
 void pint_error(unsigned int line_number);
 void pop_error(unsigned int line_number);
 void swap_error(unsigned int line_number);
 void add_error(unsigned int line_number);
+void push_error(unsigned int line_number, FILE *file);
 void malloc_error(void);
+void global_error(unsigned int line_number, FILE *file, char *token);
+
 
 int execute_f(char *content, stack_t **stack,
 			  unsigned int numberline, FILE *file);
+void free_stack(stack_t **stack);
+int is_valid_integer(const char *str);
 
-void free_stack(stack_t *head);
 #endif /* MONTY_H */
