@@ -15,15 +15,16 @@
 int execute_f(char *content, stack_t **stack, unsigned int numlin, FILE *file)
 {
 	char *content_copy, *token, *value;
-	int valu;
+	int valu, i = 0;
 	instruction_t Spe_func[] = {{"push", push}, {"pall", pall}, {"pint", pint},
-	{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}, {NULL, NULL}};
-	int i = 0;
+	{"pop", pop}, {"swap", swap}, {"add", add}, {"nop", nop}, {"sub", sub},
+	{"div", div_}, {"mul", mul}, {"mod", mod}, {"pchar", pchar}, {"pstr", pstr},
+	{"div", div_}, {"rotl", rotl}, {"rotr", rotr},{NULL, NULL}};
 
 	content_copy = strdup(content);
 	token = strtok(content_copy, " \n\t");
 	value = strtok(NULL, " \n\t");
-	if (token == NULL)
+	if (token == NULL || token[0] == '#')
 	{
 		free(content_copy);
 		return (0);
