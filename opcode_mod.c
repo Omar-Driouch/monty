@@ -9,7 +9,7 @@ void mod(stack_t **stack, unsigned int line_number)
 {
 	if (!stack || !*stack || !(*stack)->next)
 	{
-		mul_error(line_number);
+		mod_error(line_number);
 	}
 	if ((*stack)->n == 0)
 	{
@@ -17,7 +17,7 @@ void mod(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	(*stack)->next->n *= (*stack)->n;
+	(*stack)->next->n %= (*stack)->n;
 	pop(stack, line_number);
 }
 
