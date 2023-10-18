@@ -8,25 +8,25 @@
 void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_top;
-    stack_t *current;
+	stack_t *current;
 
-    (void)line_number;
+	(void)line_number;
 
-    if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-        return; 
+	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+		return;
 
-    new_top = (*stack)->next;
-    current = new_top;
+	new_top = (*stack)->next;
+	current = new_top;
 
-    while (current->next != NULL)
-    {
-        current = current->next;
-    }
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
 
-    current->next = *stack;
-    (*stack)->prev = current;
-    (*stack)->next = NULL;
-    new_top->prev = NULL;
+	current->next = *stack;
+	(*stack)->prev = current;
+	(*stack)->next = NULL;
+	new_top->prev = NULL;
 
-    *stack = new_top;
+	*stack = new_top;
 }

@@ -30,14 +30,11 @@ int main(int argc, char *argv[])
 	{
 		if (content[char_read - 1] == '\n')
 			content[char_read - 1] = '\0';
-
 		execute_f(content, &stack, line_number, file);
-
 		line_number++;
 	}
 
 	fclose(file);
-
 	free_stack(&stack);
 	free(content);
 	return (0);

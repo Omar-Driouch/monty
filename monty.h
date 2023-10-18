@@ -85,5 +85,6 @@ int is_valid_integer(const char *str);
 
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
+void pchar__error(stack_t **stack, unsigned int nubr, FILE *file, char *tokn);
 
 #endif /* MONTY_H */

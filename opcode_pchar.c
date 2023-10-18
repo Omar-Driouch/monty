@@ -7,7 +7,7 @@
  */
 void pchar(stack_t **stack, unsigned int line_number)
 {
-	
+
 	if (!stack || !*stack)
 	{
 		pchar_error(line_number);
@@ -21,7 +21,6 @@ void pchar(stack_t **stack, unsigned int line_number)
 	putchar((*stack)->n);
 	putchar('\n');
 }
-
 
 /**
  * pchar_error - Handle error on putcharto an empty stack .
