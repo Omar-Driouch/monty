@@ -50,9 +50,10 @@ void pint_error(unsigned int line_number)
  *
  * Return: No return value; exits with failure status.
  */
-void global_error(unsigned int line_number, FILE *file, char *token)
+void global_error(unsigned int lr, FILE *file, char *token, stack_t **stack)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, token);
+	fprintf(stderr, "L%d: unknown instruction %s\n", lr, token);
+	free_stack(stack);
 	free(token);
 	fclose(file);
 	exit(EXIT_FAILURE);

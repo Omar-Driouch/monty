@@ -51,8 +51,8 @@ int execute_f(char *content, stack_t **stack, unsigned int numlin, FILE *file)
 		}
 		i++;
 	}
-	global_error(numlin, file, token);
-	free(content_copy);
+	free(content);
+	global_error(numlin, file, content_copy, stack);
 	return (0);
 }
 

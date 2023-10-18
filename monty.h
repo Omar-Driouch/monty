@@ -67,7 +67,7 @@ void swap_error(unsigned int line_number);
 void add_error(unsigned int line_number);
 void push_error(unsigned int line_number, FILE *file);
 void malloc_error(void);
-void global_error(unsigned int line_number, FILE *file, char *token);
+void global_error(unsigned int lr, FILE *file, char *token, stack_t **stack);
 
 void sub_error(unsigned int line_number);
 void div_error(unsigned int line_number);
