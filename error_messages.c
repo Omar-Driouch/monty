@@ -38,17 +38,11 @@ void pint_error(unsigned int line_number)
 }
 
 /**
- * global_error - Handle unknown instruction error.
- *
- * @line_number: The line number where the error occurred.
- * @file: A pointer to the file being processed.
- * @token: The token containing the unknown instruction.
- *
- * This function prints an error message indicating the line number and the
- * unknown instruction, frees allocated memory for the token, closes the file,
- * and exits the program with a failure status.
- *
- * Return: No return value; exits with failure status.
+ * global_error - Handle errors and exit the program.
+ * @lr: The line number where the error occurred.
+ * @file: A pointer to the file that's being processed (can be NULL).
+ * @token: A string representing the problematic instruction.
+ * @stack: A pointer to a stack data structure (can be NULL).
  */
 void global_error(unsigned int lr, FILE *file, char *token, stack_t **stack)
 {
